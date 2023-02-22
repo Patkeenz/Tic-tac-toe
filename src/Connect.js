@@ -122,13 +122,7 @@ const Connect = () => {
     }, [connected]);
 
     const handleClick = useCallback((num) => { //handles user clicks on the tic tac toe board
-        if(turn.turn === 'Player One (X)' && name.current!==document.getElementById('playerone').innerHTML.substring(12)){//check if it is player one's turn and the user is player one
-          return;
-        }
-        else if(turn.turn === 'Player Two (O)' && name.current!==document.getElementById('playertwo').innerHTML.substring(12)){//check if it is player two's turn and the user is player two
-          return;
-        }
-        else if(winner!==null){ //check if user is clicking a cell that has already been clicked or their is a winner
+        if(winner!==null){ //check if user is clicking a cell that has already been clicked or their is a winner
           return;
         }
   
@@ -222,9 +216,9 @@ const Connect = () => {
                             )}
                           </ul>
                         </Grid>
-                        <Grid item style={{ margin: 10 }}>
+                        <Grid item className="bottom-grid">
                         <input id="message" className="input-chat"></input>
-                        <Button style={{ marginRight: 298}} variant="outlined" size="small" disableElevation onClick={onSendMessage}>Send Message</Button>
+                        <Button style={{marginLeft:15, marginRight:285}} variant="outlined" size="small" disableElevation onClick={onSendMessage}>Send Message</Button>
                         <Button variant="outlined" size="small" disableElevation onClick={onDisconnect}>Disconnect</Button>
                         </Grid>
                       </Grid>
